@@ -28,7 +28,7 @@
     &:hover {
       cursor: pointer;
       background-color: #ffbfcb;
-      transform: translateY(-20px);
+      transform: translateY(-1.25rem);
     }
   }
 
@@ -42,13 +42,13 @@
 
   @for $i from 1 through 31 {
     .calendar__day:nth-child(#{$i})::before {
-      content: '#{$i}';
+      content: "#{$i}";
     }
   }
 
-  @each $lenght in (28, 29, 30, 31) {
-    &.calendar--month-length-#{$lenght} {
-      .calendar__day:nth-child(n + #{$lenght + 1}) {
+  @for $length from 28 through 31 {
+    &.calendar--month-length-#{$length} {
+      .calendar__day:nth-child(n + #{$length + 1}) {
         display: none;
       }
     }
